@@ -26883,7 +26883,9 @@ var Subreddit = function Subreddit(_ref) {
     subreddits.map(function (post, i) {
       return _react2.default.createElement(_Post2.default, {
         key: i,
-        title: post.title
+        title: post.title,
+        blurb: post.selftext,
+        thumbnail: post.thumbnail
       });
     })
   );
@@ -26915,11 +26917,24 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Post = function Post(_ref) {
-  var title = _ref.title;
+  var title = _ref.title,
+      blurb = _ref.blurb,
+      thumbnail = _ref.thumbnail;
   return _react2.default.createElement(
     'div',
     null,
-    title
+    _react2.default.createElement(
+      'div',
+      null,
+      title
+    ),
+    _react2.default.createElement('br', null),
+    _react2.default.createElement(
+      'div',
+      null,
+      blurb
+    ),
+    _react2.default.createElement('img', { src: thumbnail })
   );
 };
 
