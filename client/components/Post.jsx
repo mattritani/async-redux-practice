@@ -1,10 +1,12 @@
 import React from 'react'
 
-const Post = ({title,blurb,thumbnail}) => (
+const Post = ({link,title, created,blurb,thumbnail}) => (
   <div>
-<div>{title}</div><br></br>
+  {/* <div>{link}></div>  */}
+  <a href={'http://reddit.com'+link} target= '_blank'>{title}</a>{created}<br></br>
   <div>{blurb}</div>
   <img src ={thumbnail}/>
+
   
 
 

@@ -11,6 +11,8 @@ const Subreddit = ({subreddits}) => (
         title={post.title}
         blurb={post.selftext}
         thumbnail={post.thumbnail}
+        created ={(new Date(post.created*1000)).toString()}
+        link = {post.permalink}
       />
     )}
   </div>
